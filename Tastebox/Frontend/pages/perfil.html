@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi perfil | TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">tastebox</a>
+    <form class="search" role="search" id="search-form">
+      <input type="search" name="q" placeholder="Busca recetas, ingredientes y más" aria-label="Buscar">
+      <button type="submit">Búsqueda</button>
+    </form>
+
+    <a href="login.html" class="auth" id="auth-link">Iniciar sesión</a>
+        <nav class="nav">
+      <a href="recipeCategories.html">Recetas</a>
+      <a href="suscripcion.html">Suscripciones</a>
+      <a href="habitos.html">Mis hábitos</a>
+    </nav>
+  </header>
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/notice.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/plans.js"></script>
+  <script src="../js/recipeCatalog.js"></script>
+  <script src="../js/categoryMeta.js"></script>
+  <script src="../js/savedRecipes.js"></script>
+
+  <main>
+    <a href="index.html" class="home-link" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3L12 3z"/></svg>
+    </a>
+
+    <div class="profile-page">
+
+      <div id="side-slot" data-current="perfil"></div>
+
+      <div class="profile-main">
+        <h2 class="profile-title">Mi perfil</h2>
+        <p class="profile-hello">¡Hola, <span id="hello-name">usuario</span>!<br>Este es un resumen de tu actividad en tastebox</p>
+
+        <ul class="stats">
+        <li class="stat"><span class="stat__icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span><div><strong id="stat-saved">0</strong><span>Recetas guardadas</span></div></li>
+        <li class="stat"><span class="stat__icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.6A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></svg></span><div><strong id="stat-collections">0</strong><span>Colecciones creadas</span></div></li>
+        <li class="stat"><span class="stat__icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s5 4 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-8z"/></svg></span><div><strong id="stat-streak">0</strong><span id="stat-streak-label">Semanas de racha</span></div></li>
+        <li class="stat"><span class="stat__icon"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><div><strong id="stat-rating">-</strong><span>Calificación Promedio</span></div></li>
+        </ul>
+
+        <section class="activity" aria-labelledby="activity-title">
+          <h3 id="activity-title">Actividad reciente</h3>
+          <div class="activity__list" id="activity-list"></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="weekly-box">
+      <h2>Caja semanal</h2>
+      <p class="weekly-box__date">Vigente hasta el lunes 14 de agosto</p>
+      <div class="weekly-grid">
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/sideMenu.js"></script>
+  <script src="../js/colecciones.js"></script>
+  <script src="../js/reviewStore.js"></script>
+  <script src="../js/actividad.js"></script>
+  <script src="../js/perfil.js"></script>
+  <script src="../js/weeklyBox.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recuperar contraseña | TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="page-login">
+
+  <header class="header header--simple">
+    <a href="index.html" class="logo">tastebox</a>
+  </header>
+
+  <main>
+
+    <a href="index.html" class="home-link" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3L12 3z"/></svg>
+    </a>
+
+    <section class="login">
+      <h1 class="login__title">¿Olvidaste tu contraseña?</h1>
+      <h2 class="login__subtitle">Escribe el email de tu cuenta y te enviaremos un enlace para crear una nueva.</h2>
+
+      <form class="form" id="forgot-form" novalidate>
+        <div class="field">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" placeholder="Email*" autocomplete="email" required>
+          <p class="field__error" id="email-error"></p>
+        </div>
+        <button type="submit" class="form__submit">Enviar enlace</button>
+      </form>
+
+      <p class="login__register"><a href="login.html">Volver a iniciar sesión</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="modal modal--ok" id="forgot-ok" aria-labelledby="forgot-ok-title">
+    <h2 class="modal__title" id="forgot-ok-title">Revisa tu correo</h2>
+    <p class="modal__text" role="status">Si el email está registrado, te enviamos un enlace para restablecer tu contraseña.</p>
+    <p class="modal__sub">El enlace vence en 30 minutos.</p>
+    <p class="modal__sub modal__demo" id="forgot-demo" hidden>Modo demostración (aún no hay servidor de correo): <a id="forgot-link" href="#">abrir el enlace de restablecimiento</a></p>
+    <form method="dialog"><button class="modal__btn" autofocus>Entendido</button></form>
+  </dialog>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+  <script src="../js/passwordReset.js"></script>
+  <script src="../js/recuperar.js"></script>
+</body>
+</html>

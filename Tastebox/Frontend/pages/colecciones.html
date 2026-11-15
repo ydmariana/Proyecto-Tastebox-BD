@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis colecciones | TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">tastebox</a>
+    <form class="search" role="search" id="search-form">
+      <input type="search" name="q" placeholder="Busca recetas, ingredientes y más" aria-label="Buscar">
+      <button type="submit">Búsqueda</button>
+    </form>
+
+    <a href="login.html" class="auth" id="auth-link">Iniciar sesión</a>
+        <nav class="nav">
+      <a href="recipeCategories.html">Recetas</a>
+      <a href="suscripcion.html">Suscripciones</a>
+      <a href="habitos.html">Mis hábitos</a>
+    </nav>
+  </header>
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/notice.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/plans.js"></script>
+  <script src="../js/recipeCatalog.js"></script>
+  <script src="../js/savedRecipes.js"></script>
+
+  <main>
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="index.html" aria-label="Inicio"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></svg></a>
+      <span aria-hidden="true">›</span>
+      <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <div class="profile-page">
+      <div id="side-slot" data-current="colecciones"></div>
+      <div class="profile-main">
+    <div class="page-title">
+      <h1>Mis colecciones</h1>
+    </div>
+
+    <section class="collections" id="collections" aria-label="Mis colecciones"></section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/sideMenu.js"></script>
+  <script src="../js/colecciones.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

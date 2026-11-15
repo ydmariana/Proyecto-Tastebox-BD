@@ -1,0 +1,20 @@
+window.TasteboxConfig = Object.freeze({
+  API_URL: window.TASTEBOX_API_URL || "http://localhost:5000",
+  EMAIL_PATTERN: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+  PHONE_PATTERN: /^[+\d][\d\s-]{6,18}$/,
+  FREE_PLAN_ID: 1,
+  DEMO_USER_EMAIL: "demo@tastebox.com",
+  MOBILE_MAX_WIDTH_PX: 800,
+  TOAST_MS: 2600,
+  REDIRECT_MS: 4000,
+  HERO_CAROUSEL_MS: 5000,
+  RECIPE_CAROUSEL_MS: 3500,
+  RECIPE_LIMITS: Object.freeze({
+    NAME_MAX_LENGTH: 45,
+    DESCRIPTION_MAX_LENGTH: 5000,
+    CUISINE_MAX_LENGTH: 45,
+    MINUTES_MAX: 100000,
+    IMAGE_MAX_LENGTH: 255,
+    INGREDIENTS_MAX_LENGTH: 10000,
+  }),
+});

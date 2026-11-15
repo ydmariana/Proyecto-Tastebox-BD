@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">tastebox</a>
+    <form class="search" role="search" id="search-form">
+      <input type="search" name="q" placeholder="Busca recetas, ingredientes y más" aria-label="Buscar">
+      <button type="submit">Búsqueda</button>
+    </form>
+
+    <a href="login.html" class="auth" id="auth-link">Iniciar sesión</a>
+        <nav class="nav">
+      <a href="recipeCategories.html">Recetas</a>
+      <a href="suscripcion.html">Suscripciones</a>
+      <a href="habitos.html">Mis hábitos</a>
+    </nav>
+  </header>
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/notice.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/plans.js"></script>
+  <script src="../js/recipeCatalog.js"></script>
+  <script src="../js/categoryMeta.js"></script>
+  <script src="../js/savedRecipes.js"></script>
+
+  <main>
+
+    <section class="hero carousel" id="hero" aria-roledescription="carrusel">
+      <div class="carousel__track">
+        <figure class="carousel__slide is-active">
+          <img src="../img/home/hero-1.jpg" alt="Caja de ingredientes frescos de TasteBox">
+          <figcaption>Ingredientes frescos, magia en cada caja</figcaption>
+        </figure>
+        <figure class="carousel__slide">
+          <img src="../img/home/hero-2.jpeg" alt="Caja de TasteBox con verduras">
+          <figcaption>Ingredientes frescos, magia en cada caja</figcaption>
+        </figure>
+        <figure class="carousel__slide">
+          <img src="../img/home/hero-3.jpeg" alt="Caja de TasteBox con especias">
+          <figcaption>Ingredientes frescos, magia en cada caja</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h2>Recetas destacadas</h2>
+
+      <ul class="chips">
+        <li><a href="categoryRecipes.html?category=lunch">Almuerzos</a></li>
+        <li><a href="categoryRecipes.html?category=cakes">Postres</a></li>
+        <li><a href="categoryRecipes.html?category=breakfast">Desayunos</a></li>
+        <li><a href="categoryRecipes.html?category=snacks">Snacks</a></li>
+        <li><a href="categoryRecipes.html?category=smoothies">Bebidas</a></li>
+      </ul>
+
+      <div class="recipes carousel" id="recipes">
+        <button class="recipes__arrow recipes__arrow--prev" aria-label="Anterior">&#10094;</button>
+        <div class="recipes__viewport">
+          <div class="recipes__track">
+
+          </div>
+        </div>
+        <button class="recipes__arrow recipes__arrow--next" aria-label="Siguiente">&#10095;</button>
+      </div>
+
+      <a href="recipeCategories.html" class="all-categories">
+        <span>Todas las categorías</span>
+        <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M20 4 L32 22 H8 Z"/>
+          <rect x="6" y="34" width="22" height="22"/>
+          <circle cx="44" cy="42" r="11"/>
+          <path d="M52 50 L60 58"/>
+        </svg>
+      </a>
+    </section>
+
+    <section class="intro">
+      <h2>Cocinar en casa nunca fue tan fácil</h2>
+      <div class="intro__grid">
+        <div class="intro__text">
+          <p>TasteBox te ayuda a descubrir el placer de cocinar con recetas personalizadas según tus gustos, herramientas para guardar tus favoritas y una planificación sencilla para transformar cada comida en una experiencia única.</p>
+          <ul class="steps">
+            <li><span class="steps__icon"><i class="fa-solid fa-basket-shopping" aria-hidden="true"></i></span><strong>Descubre</strong></li>
+            <li><span class="steps__icon"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span><strong>Guarda</strong></li>
+            <li><span class="steps__icon"><i class="fa-solid fa-fire-burner" aria-hidden="true"></i></span><strong>Cocina</strong></li>
+          </ul>
+        </div>
+        <img src="../img/home/cocinar.png" alt="Persona cortando tomates junto a un celular y una caja TasteBox">
+      </div>
+    </section>
+
+    <section class="cta" id="suscripcion">
+      <h2>¡Cocina sin límites!</h2>
+      <div class="cta__grid">
+        <img src="../img/home/caja.png" alt="Caja TasteBox con ingredientes">
+        <div class="cta__side">
+          <div class="cta__box">
+            <p>Suscríbete a tastebox y recibe una caja de ingredientes seleccionados y acceso a recetas exclusivas</p>
+            <div class="cta__icons">
+              <span><i class="fa-solid fa-box-open" aria-hidden="true"></i></span><span><i class="fa-solid fa-utensils" aria-hidden="true"></i></span>
+            </div>
+          </div>
+          <a href="suscripcion.html" class="btn">Ver más información</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/colecciones.js"></script>
+  <script src="../js/homeRecipes.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

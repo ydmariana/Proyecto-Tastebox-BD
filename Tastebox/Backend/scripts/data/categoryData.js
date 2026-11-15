@@ -1,0 +1,428 @@
+const CATEGORIES = {
+  breakfast: {
+    label: "Desayunos",
+    featured: [
+      ["Tortilla española", "Fácil", 15, 4, 1, "desayunos/tortilla-espanola.jpg"],
+      ["Pancakes", "Fácil", 10, 4.5, 1, "desayunos/pancakes.jpg"],
+      ["Caldo de costilla", "Intermedio", 35, 4, 0, "desayunos/caldo-de-costilla.jpg"],
+      ["Pan de banano", "Fácil", 20, 4, 0, "desayunos/pan-de-banano.jpg"],
+      ["Pudín de chía", "Fácil", 10, 4.5, 0, "desayunos/pudin-de-chia.jpg"],
+      ["Arepa de huevo", "Intermedio", 25, 4, 0, "desayunos/arepa-de-huevo.jpg"],
+    ],
+    more: [
+      ["Arepa paisa", "Fácil", 15, 4, 1, "desayunos/arepa-paisa.png"],
+      ["Tamal peruano", "Intermedio", 30, 4.5, 0, "desayunos/tamal.png"],
+      ["Tostadas francesas", "Fácil", 15, 4, 0, "desayunos/tostadas.png"],
+      ["Chilaquiles verdes", "Intermedio", 30, 4, 1, "desayunos/chilaquiles-verdes.jpg"],
+      ["Batido vegano", "Fácil", 10, 4.5, 1, "desayunos/batido-vegano.jpg"],
+      ["Changua", "Fácil", 15, 4, 0, "desayunos/changua.jpg"],
+      ["Huevos pericos", "Fácil", 10, 4.5, 0, "desayunos/huevos-pericos.jpg"],
+      ["Calentado paisa", "Fácil", 15, 4, 0, "desayunos/calentado-paisa.jpg"],
+      ["Avena con frutas", "Fácil", 10, 4.5, 0, "desayunos/avena-con-frutas.jpg"],
+      ["Huevos rancheros", "Intermedio", 25, 4, 1, "desayunos/huevos-rancheros.jpg"],
+      ["Arepa boyacense", "Fácil", 15, 4, 1, "desayunos/arepa-boyacense.jpg"],
+      ["Omelette", "Fácil", 10, 4, 0, "desayunos/omelette-de-queso.jpg"],
+      ["Waffles", "Fácil", 20, 4.5, 0, "desayunos/waffles.jpg"],
+      ["Granola casera", "Fácil", 25, 4, 0, "desayunos/granola-casera.jpg"],
+      ["Sándwich de huevo", "Fácil", 10, 4, 0, "desayunos/sandwich-de-huevo.jpg"],
+    ],
+    premium: [
+      ["Almojábana", "Fácil", 30, 4.5, 0, "desayunos/almojabana.jpg"],
+      ["Empanadas", "Intermedio", 40, 4, 0, "desayunos/empanadas.jpg"],
+      ["Pan de chocolate", "Fácil", 35, 4.5, 0, "desayunos/pan-de-chocolate.jpg"],
+    ],
+  },
+
+  lunch: {
+    label: "Almuerzos",
+    featured: [
+      ["Bandeja paisa", "Difícil", 90, 4.5, 1, "almuerzos/bandeja-paisa.jpg"],
+      ["Ajiaco santafereño", "Difícil", 75, 5, 1, "almuerzos/ajiaco-santafereno.jpg"],
+      ["Sancocho antioqueño", "Difícil", 120, 4.5, 1, "almuerzos/sancocho-antioqueno.jpg"],
+      ["Tacos al pastor", "Intermedio", 40, 4.5, 1, "almuerzos/tacos-al-pastor.jpg"],
+      ["Espagueti a la carbonara", "Intermedio", 25, 4.5, 0, "almuerzos/espagueti-a-la-carbonara.jpg"],
+      ["Lasaña", "Intermedio", 75, 5, 1, "almuerzos/lasagna.jpg"],
+    ],
+    more: [
+      ["Arroz chaufa", "Intermedio", 35, 4.5, 1, "almuerzos/arroz-chaufa.jpg"],
+      ["Burritos", "Fácil", 30, 4, 0, "almuerzos/burritos.jpg"],
+      ["Hamburguesa de carne", "Fácil", 25, 4.5, 1, "almuerzos/hamburguesa-de-carne.jpg"],
+      ["Ramen", "Intermedio", 40, 4.5, 1, "almuerzos/ramen.jpg"],
+      ["Raviolis", "Difícil", 60, 4.5, 0, "almuerzos/raviolis.jpg"],
+      ["Crema de auyama", "Fácil", 30, 4.5, 1, "almuerzos/crema-auyama.jpg"],
+      ["Sushi", "Intermedio", 15, 4, 0, "home/sushi.jpeg"],
+    ],
+    premium: [
+      ["Kibbeh", "Difícil", 60, 4.5, 0, "almuerzos/kibbeh.jpg"],
+      ["Mansaf", "Difícil", 150, 5, 0, "almuerzos/mansaf.jpg"],
+      ["Sopa de espinaca", "Fácil", 25, 4, 0, "almuerzos/sopa-espinaca.jpg"],
+    ],
+  },
+
+  snacks: {
+    label: "Snacks",
+    featured: [
+      ["Patacones con hogao", "Fácil", 25, 4.5, 1, "snacks/patacones-con-hogao.jpg"],
+      ["Quesadillas", "Fácil", 15, 4.5, 0, "snacks/quesadillas.jpg"],
+      ["Papa rellena", "Intermedio", 45, 4.5, 1, "snacks/papa-rellena.jpg"],
+      ["Churros", "Fácil", 30, 4.5, 1, "snacks/churros.jpg"],
+      ["Buñuelos", "Intermedio", 45, 4.5, 1, "snacks/bunuelos.jpg"],
+      ["Aborrajados", "Intermedio", 30, 4.5, 1, "snacks/aborrajados.jpg"],
+    ],
+    more: [
+      ["Chipá", "Fácil", 35, 4, 0, "snacks/chipa.jpg"],
+      ["Choripán", "Fácil", 20, 4.5, 1, "snacks/choripan.jpg"],
+      ["Chicharrones", "Intermedio", 40, 4, 0, "snacks/chicharrones.jpg"],
+      ["Dorilocos", "Fácil", 10, 4, 0, "snacks/dorilocos.jpg"],
+      ["Elotes preparados", "Fácil", 15, 4.5, 1, "snacks/elotes-preparados.jpg"],
+      ["Humitas", "Intermedio", 50, 4, 0, "snacks/humitas.jpg"],
+    ],
+    premium: [
+      ["Cocadas", "Fácil", 30, 4, 0, "snacks/cocadas.jpg"],
+      ["Medialunas", "Intermedio", 90, 4.5, 0, "snacks/medialunas.jpg"],
+      ["Nuggets", "Fácil", 25, 4, 0, "snacks/nuggets.jpg"],
+    ],
+  },
+
+  dinner: {
+    label: "Cenas",
+    featured: [
+      ["Pizza margarita", "Intermedio", 50, 4.5, 1, "cenas/pizza-margarita.jpg"],
+      ["Pollo a la parmesana", "Intermedio", 40, 4.5, 1, "cenas/pollo-a-la-parmesana.jpg"],
+      ["Fajitas de carne", "Fácil", 30, 4.5, 1, "cenas/fajitas-de-carne.jpg"],
+      ["Milanesa napolitana", "Intermedio", 45, 4.5, 1, "cenas/milanesa-napolitana.jpg"],
+      ["Penne al pesto", "Fácil", 20, 4, 0, "cenas/pasta-al-pesto.jpg"],
+      ["Shawarma", "Intermedio", 35, 4.5, 1, "cenas/shawarma.jpg"],
+    ],
+    more: [
+      ["Calzone", "Intermedio", 45, 4, 0, "cenas/calzone.jpg"],
+      ["Cazuela de frijoles", "Intermedio", 60, 4.5, 1, "cenas/cazuela-de-frijoles.jpg"],
+      ["Crepes de pollo y champiñones", "Intermedio", 35, 4, 0, "cenas/crepes-pollo-y-champinones.jpg"],
+      ["Flautas de pollo", "Fácil", 30, 4, 0, "cenas/flautas-de-pollo.jpg"],
+      ["Gringas al pastor", "Intermedio", 30, 4.5, 0, "cenas/gringas-al-pastor.jpg"],
+      ["Pastel de papa", "Intermedio", 60, 4.5, 1, "cenas/pastel-de-papa.jpg"],
+    ],
+    premium: [
+      ["Dolmas", "Difícil", 75, 4.5, 0, "cenas/dolmas.jpg"],
+      ["Bruschettas", "Fácil", 15, 4, 0, "cenas/bruschettas.jpg"],
+      ["Salchipapa", "Fácil", 20, 4, 0, "cenas/salchipapa.jpg"],
+    ],
+  },
+
+  soups: {
+    label: "Sopas",
+    featured: [
+      ["Sopa de lentejas", "Fácil", 40, 4, 0, "sopas/sopa-de-lentejas.jpg"],
+      ["Sopa de tomate", "Fácil", 30, 4, 0, "sopas/sopa-de-tomate.jpg"],
+      ["Minestrone", "Intermedio", 45, 4, 0, "sopas/minestrone.jpg"],
+      ["Caldo de gallina", "Intermedio", 75, 4.5, 1, "sopas/caldo-de-gallina.jpg"],
+      ["Puchero argentino", "Difícil", 120, 4.5, 1, "sopas/puchero-argentino.jpg"],
+      ["Sopa de albóndigas", "Intermedio", 50, 4.5, 1, "sopas/sopa-de-albondigas.jpg"],
+    ],
+    more: [
+      ["Crema de brócoli", "Fácil", 30, 4, 0, "sopas/crema-de-brocoli.jpg"],
+      ["Caldo de pescado", "Intermedio", 40, 4, 0, "sopas/caldo-de-pescado.jpg"],
+      ["Mondongo", "Difícil", 150, 4, 0, "sopas/mondongo.jpg"],
+      ["Carbonada criolla", "Intermedio", 90, 4.5, 1, "sopas/carbonada-criolla.jpg"],
+      ["Shambar", "Intermedio", 60, 4, 0, "sopas/shambar.jpg"],
+      ["Sopa de fideos", "Fácil", 20, 4, 0, "sopas/sopa-de-fideos.jpg"],
+    ],
+    premium: [
+      ["Ajiaco", "Difícil", 75, 5, 1, "almuerzos/ajiaco-santafereno.jpg"],
+      ["Crema de zapallo", "Fácil", 30, 4.5, 1, "almuerzos/crema-auyama.jpg"],
+      ["Sancocho trifásico", "Difícil", 120, 4.5, 1, "almuerzos/sancocho-antioqueno.jpg"],
+    ],
+  },
+
+  salads: {
+    label: "Ensaladas",
+    featured: [
+      ["Ensalada caprese", "Fácil", 10, 4, 0, "ensalada/ensalada-caprese.jpg"],
+      ["Ensalada de quinoa", "Fácil", 25, 4.5, 1, "ensalada/ensalada-de-quinoa.jpg"],
+      ["Ensalada de palta", "Fácil", 10, 4, 0, "ensalada/ensalada-de-palta.jpg"],
+      ["Ensalada de atún", "Fácil", 15, 4, 1, "ensalada/ensalada-de-atun.jpg"],
+      ["Ensalada panzanella", "Fácil", 20, 4.5, 1, "ensalada/ensalada-panzanella.jpg"],
+      ["Ensalada de frutas", "Fácil", 10, 4.5, 1, "ensalada/ensalada-de-frutas.jpg"],
+    ],
+    more: [
+      ["Ensalada de frijoles negros", "Fácil", 15, 4.5, 1, "ensalada/ensalada-de-frijoles-negros.jpg"],
+      ["Ensalada de mango", "Fácil", 15, 4.5, 0, "ensalada/ensalada-de-mango.jpg"],
+      ["Ensalada de palmitos", "Fácil", 10, 4, 0, "ensalada/ensalada-de-palmitos.jpg"],
+      ["Ensalada de papa", "Fácil", 30, 4, 0, "ensalada/ensalada-de-papa.jpg"],
+      ["Ensalada de remolacha", "Fácil", 20, 4.5, 0, "ensalada/ensalada-de-remolacha.jpg"],
+      ["Ensalada de zanahoria", "Fácil", 10, 4, 0, "ensalada/ensalada-de-zanahoria.jpg"],
+    ],
+    premium: [
+      ["Ensalada mexicana de pollo", "Fácil", 25, 4, 0, "ensalada/ensalada-mexicana-de-pollo.jpg"],
+      ["Ensalada rusa", "Fácil", 30, 4, 0, "ensalada/ensalada-rusa.jpg"],
+      ["Solterito arequipeño", "Intermedio", 30, 4.5, 1, "ensalada/solterito-arequipeno.jpg"],
+    ],
+  },
+
+  fish: {
+    label: "Pescados",
+    featured: [
+      ["Ceviche de camarón", "Intermedio", 30, 4.5, 1, "pescados/ceviche-de-camaron.jpg"],
+      ["Mojarra frita", "Intermedio", 40, 4.5, 1, "pescados/mojarra-frita.jpg"],
+      ["Paella de mariscos", "Difícil", 70, 5, 1, "pescados/paella.jpg"],
+      ["Pescado en papillote", "Intermedio", 30, 4, 0, "pescados/pescado-en-papillote.jpg"],
+      ["Tacos de pescado", "Fácil", 30, 4.5, 1, "pescados/tacos-de-pescado.jpg"],
+      ["Pescado zarandeado", "Intermedio", 45, 4.5, 1, "pescados/pescado-zarandeado.jpg"],
+    ],
+    more: [
+      ["Buñuelos de bacalao", "Intermedio", 40, 4.5, 1, "pescados/bunuelos-de-bacalao.jpg"],
+      ["Empanadas de pescado", "Intermedio", 45, 4, 0, "pescados/empanadas-pescado.jpg"],
+      ["Meluzzo al pomodoro", "Fácil", 25, 4, 0, "pescados/meluzzo-al-pomodoro.jpg"],
+      ["Merluza a la romana", "Fácil", 25, 4, 0, "pescados/merluza-a-la-romana.jpg"],
+      ["Pacú a la parrilla", "Intermedio", 40, 4, 0, "pescados/pacu-a-la-parrila.jpg"],
+      ["Pejerrey frito", "Fácil", 25, 4, 0, "pescados/pejerrey-frito.jpg"],
+    ],
+    premium: [
+      ["Parihuela", "Difícil", 60, 4.5, 1, "pescados/parihuela.jpg"],
+      ["Pescado a la diabla", "Intermedio", 30, 4, 0, "pescados/pescado-a-la-diabla.jpg"],
+      ["Tikin xic", "Intermedio", 60, 4.5, 0, "pescados/tikin-xic.jpg"],
+    ],
+  },
+
+  meats: {
+    label: "Carnes",
+    featured: [
+      ["Churrasco", "Intermedio", 30, 4.5, 1, "carnes/churrasco.jfif"],
+      ["Lomo saltado", "Intermedio", 35, 4.5, 1, "carnes/lomo-saltado.jfif"],
+      ["Costillas BBQ", "Difícil", 150, 5, 1, "carnes/costillitas-bbq.jfif"],
+      ["Pollo parmesano", "Intermedio", 40, 4.5, 1, "cenas/pollo-a-la-parmesana.jpg"],
+      ["Puchero de res", "Difícil", 120, 4.5, 1, "sopas/puchero-argentino.jpg"],
+      ["Fajitas de res", "Fácil", 30, 4.5, 1, "cenas/fajitas-de-carne.jpg"],
+    ],
+    more: [
+      ["Milanesa gratinada", "Intermedio", 45, 4.5, 1, "cenas/milanesa-napolitana.jpg"],
+      ["Carbonada de res", "Intermedio", 90, 4.5, 1, "sopas/carbonada-criolla.jpg"],
+      ["Kibbeh", "Difícil", 60, 4.5, 0, "almuerzos/kibbeh.jpg"],
+      ["Mansaf", "Difícil", 150, 5, 0, "almuerzos/mansaf.jpg"],
+      ["Sobrebarriga en salsa", "Difícil", 120, 4.5, 1, "carnes/sobrebarriga-en-salsa.jfif"],
+      ["Hamburguesa casera", "Fácil", 25, 4.5, 1, "almuerzos/hamburguesa-de-carne.jpg"],
+    ],
+  },
+
+  pasta: {
+    label: "Pastas",
+    featured: [
+      ["Espaguetis a la boloñesa", "Fácil", 40, 4.5, 1, "pastas/espaguetis-a-la-bolognesa.jfif"],
+      ["Fettuccine Alfredo", "Fácil", 25, 4.5, 1, "pastas/fetuccini-alfredo.jfif"],
+      ["Lasaña clásica", "Intermedio", 75, 5, 1, "almuerzos/lasagna.jpg"],
+      ["Carbonara", "Intermedio", 25, 4.5, 0, "almuerzos/espagueti-a-la-carbonara.jpg"],
+      ["Pasta con champiñones", "Fácil", 25, 4, 0, "pastas/pasta-con-champinones.jfif"],
+      ["Spaghetti aglio e olio", "Fácil", 20, 4.5, 1, "pastas/spaguetti-aglio-e-olio.jfif"],
+    ],
+    more: [
+      ["Penne arrabbiata", "Fácil", 20, 4, 0, "pastas/penne-arrabbiata.jfif"],
+      ["Ravioles de espinaca", "Difícil", 60, 4.5, 0, "almuerzos/raviolis.jpg"],
+      ["Macarrones con queso", "Fácil", 25, 4.5, 1, "pastas/macarrones-con-queso.jfif"],
+      ["Pasta al pesto", "Fácil", 20, 4, 0, "cenas/pasta-al-pesto.jpg"],
+      ["Pasta primavera", "Fácil", 25, 4, 0, "pastas/pasta-primavera.jfif"],
+      ["Ñoquis de papa", "Intermedio", 50, 4, 0, "pastas/noquis-de-papa.jfif"],
+    ],
+  },
+
+  cakes: {
+    label: "Esponjados",
+    featured: [
+      ["Torta de vainilla", "Fácil", 55, 4.5, 1, "esponjados/torta-de-vainilla.jpg"],
+      ["Ponqué de banano", "Fácil", 60, 4.5, 1, "desayunos/pan-de-banano.jpg"],
+      ["Red velvet", "Difícil", 80, 5, 1, "esponjados/red-velvet.jpg"],
+      ["Torta de zanahoria", "Intermedio", 65, 4.5, 1, "esponjados/torta-de-zanahoria.jpg"],
+      ["Torta de limón", "Fácil", 55, 4, 0, "esponjados/torta-de-limon.jpg"],
+      ["Ponqué marmoleado", "Intermedio", 60, 4.5, 1, "esponjados/ponque-marmoleado.jpg"],
+    ],
+    more: [
+      ["Cheesecake de fresa", "Intermedio", 90, 4.5, 1, "esponjados/cheesecake-de-fresa.jpg"],
+      ["Torta tres leches", "Intermedio", 70, 5, 1, "esponjados/torta-tres-leches.jpg"],
+      ["Brazo de reina", "Difícil", 60, 4, 0, "esponjados/brazo-de-reina.jpg"],
+      ["Waffles esponjosos", "Fácil", 25, 4.5, 1, "desayunos/pancakes.jpg"],
+      ["Torta de chocolate", "Fácil", 60, 4.5, 1, "brownies.jpeg"],
+      ["Torta de coco", "Intermedio", 65, 4, 0, "esponjados/torta-de-coco.jpg"],
+    ],
+  },
+
+  baked: {
+    label: "Horneados",
+    featured: [
+      ["Pan de bono", "Intermedio", 40, 4.5, 1, "horneados/pan-de-bono.jpg"],
+      ["Galletas de chips de chocolate", "Fácil", 25, 4.5, 1, "horneados/galletas-de-chips-de-chocolate.jpg"],
+      ["Brownies", "Fácil", 15, 4, 0, "brownies.jpeg"],
+      ["Pan de chocolate", "Intermedio", 90, 4.5, 0, "desayunos/pan-de-chocolate.jpg"],
+      ["Empanadas horneadas", "Intermedio", 45, 4, 0, "empanada.jpg"],
+      ["Pan de yuca", "Fácil", 35, 4.5, 1, "snacks/chipa.jpg"],
+    ],
+    more: [
+      ["Croissants", "Difícil", 180, 4.5, 0, "snacks/medialunas.jpg"],
+      ["Muffins de arándanos", "Fácil", 30, 4, 1, "horneados/muffins-de-arandanos.jpg"],
+      ["Galletas de avena", "Fácil", 25, 4, 0, "horneados/galletas-de-avena.jpg"],
+      ["Roscón", "Intermedio", 90, 4, 0, "horneados/roscon.jpg"],
+      ["Almojábanas", "Intermedio", 40, 4.5, 1, "desayunos/almojabana.jpg"],
+      ["Pie de limón", "Intermedio", 70, 4.5, 1, "horneados/pie-de-limon.jpg"],
+    ],
+  },
+
+  healthy: {
+    label: "Dietéticos",
+    featured: [
+      ["Bowl de quinoa", "Fácil", 25, 4.5, 1, "ensalada/ensalada-de-quinoa.jpg"],
+      ["Tortilla de claras", "Fácil", 10, 4, 0, "desayunos/tortilla-espanola.jpg"],
+      ["Pancakes de avena", "Fácil", 15, 4.5, 1, "desayunos/pancakes.jpg"],
+      ["Wrap de pollo light", "Fácil", 20, 4, 0, "cenas/shawarma.jpg"],
+      ["Sopa de verduras light", "Fácil", 30, 4, 0, "sopas/minestrone.jpg"],
+      ["Pollo al horno con vegetales", "Fácil", 40, 4.5, 1, "dietetico/pollo-al-horno-con-vegetales.jfif"],
+    ],
+    more: [
+      ["Galletas de avena sin azúcar", "Fácil", 25, 4, 0, "dietetico/galletas-de-avena.jfif"],
+      ["Brownie de frijol negro", "Intermedio", 40, 4, 1, "brownies.jpeg"],
+      ["Gelatina de fruta", "Fácil", 15, 4, 0, "dietetico/gelatina-de-frutas.jfif"],
+      ["Vasitos de chía con frutos rojos", "Fácil", 10, 4.5, 1, "desayunos/pudin-de-chia.jpg"],
+      ["Pan de almendras", "Intermedio", 50, 4.5, 0, "dietetico/pan-de-almendras.jfif"],
+      ["Helado de banano", "Fácil", 10, 4.5, 1, "dietetico/helado-banano.jfif"],
+      ["Bowl de yogurt con frutas", "Intermedio", 10, 4, 0, "dietetico/bowl-yogurt-con-frutas.jpg"],
+      ["Pudín sin azúcar", "Fácil", 20, 4, 0, "dietetico/pudin-sin-azucar.jpg"],
+    ],
+  },
+
+  christmas: {
+    label: "Navidad",
+    featured: [
+      ["Natilla", "Intermedio", 50, 5, 1, "navidad/natilla.jpg"],
+      ["Buñuelos", "Intermedio", 45, 4.5, 1, "snacks/bunuelos.jpg"],
+      ["Pavo relleno", "Difícil", 240, 4.5, 1, "dietetico/pollo-al-horno-con-vegetales.jfif"],
+      ["Pernil de cerdo", "Difícil", 180, 4.5, 0, "carnes/bondiola-de-cerdo.jfif"],
+      ["Pan de jamón", "Difícil", 120, 4.5, 1, "horneados/roscon-de-bocadillo.jfif"],
+      ["Tamales", "Difícil", 120, 4.5, 1, "desayunos/tamal.png"],
+    ],
+    more: [
+      ["Galletas de jengibre", "Fácil", 35, 4.5, 1, "dietetico/galletas-de-avena.jfif"],
+      ["Ponche navideño", "Fácil", 30, 4, 0, "navidad/ponche-navideno.jpg"],
+      ["Torta negra", "Difícil", 120, 4.5, 1, "horneados/torta-negra-envinada.jfif"],
+      ["Hojuelas", "Intermedio", 40, 4, 0, "snacks/churros.jpg"],
+      ["Arroz navideño", "Intermedio", 50, 4, 0, "almuerzos/arroz-chaufa.jpg"],
+      ["Lechona", "Difícil", 300, 5, 1, "carnes/pulled-pork.jfif"],
+    ],
+  },
+
+  "new-year": {
+    label: "Año nuevo",
+    featured: [
+      ["Lentejas de la suerte", "Fácil", 45, 4, 1, "sopas/sopa-de-lentejas.jpg"],
+      ["Pollo en salsa de champiñones", "Intermedio", 50, 4.5, 1, "cenas/crepes-pollo-y-champinones.jpg"],
+      ["Ensalada de año nuevo", "Fácil", 20, 4, 0, "ensalada/ensalada-panzanella.jpg"],
+      ["Torta de frutos secos", "Intermedio", 70, 4.5, 0, "brownies.jpeg"],
+      ["Salmón glaseado", "Intermedio", 35, 4.5, 1, "dietetico/pescado-al-horno.jfif"],
+      ["Tartaletas de frutas", "Intermedio", 50, 4, 0, "esponjados/cheesecake-de-arandanos.jfif"],
+    ],
+    more: [
+      ["Bruschettas", "Fácil", 15, 4, 0, "cenas/bruschettas.jpg"],
+      ["Brochetas de camarón", "Intermedio", 25, 4.5, 1, "pescados/pescado-zarandeado.jpg"],
+      ["Cóctel de camarones", "Fácil", 20, 4, 0, "pescados/ceviche-de-camaron.jpg"],
+      ["Mini quiches", "Intermedio", 45, 4, 0, "dietetico/torta-espinaca.jfif"],
+      ["Pasabocas de queso", "Fácil", 15, 4, 1, "snacks/aborrajados.jpg"],
+      ["Copa de postre", "Fácil", 20, 4.5, 0, "ensalada/ensalada-de-frutas.jpg"],
+    ],
+  },
+
+  halloween: {
+    label: "Halloween",
+    featured: [
+      ["Galletas fantasma", "Fácil", 30, 4.5, 1, "horneados/alfajor.jfif"],
+      ["Pastel de calabaza", "Intermedio", 75, 4.5, 1, "horneados/pastel-de-elote.jfif"],
+      ["Dedos de bruja", "Fácil", 30, 4, 0, "horneados/panderos.jfif"],
+      ["Manzanas acarameladas", "Fácil", 25, 4, 0, "halloween/manzanas-acarameladas.jpg"],
+      ["Galletas de calabaza", "Fácil", 30, 4, 0, "dietetico/galletas-de-avena.jfif"],
+      ["Gelatina de gusanos", "Fácil", 20, 4, 0, "dietetico/gelatina-de-frutas.jfif"],
+    ],
+    more: [
+      ["Pizza momia", "Fácil", 25, 4, 0, "cenas/pizza-margarita.jpg"],
+      ["Cupcakes de telaraña", "Intermedio", 45, 4.5, 1, "esponjados/torta-red-velvet.jfif"],
+      ["Palomitas de colores", "Fácil", 15, 4, 0, "halloween/palomitas-de-colores.jpg"],
+      ["Sopa de calabaza", "Fácil", 35, 4, 1, "almuerzos/crema-auyama.jpg"],
+      ["Ponche de bruja", "Fácil", 10, 4, 0, "halloween/ponche-de-bruja.jpg"],
+      ["Brownies de murciélago", "Intermedio", 40, 4.5, 0, "brownies.jpeg"],
+    ],
+  },
+
+  valentines: {
+    label: "San valentín",
+    featured: [
+      ["Fresas con chocolate", "Fácil", 20, 4.5, 1, "esponjados/brazo-de-reina.jfif"],
+      ["Filete con salsa de vino tinto", "Intermedio", 40, 5, 1, "carnes/bife-de-chorizo.jfif"],
+      ["Risotto de champiñones", "Intermedio", 45, 4.5, 0, "pastas/pasta-con-champinones.jfif"],
+      ["Tarta de frambuesa", "Intermedio", 70, 4.5, 1, "esponjados/cheesecake-de-arandanos.jfif"],
+      ["Pasta en salsa rosa", "Fácil", 25, 4, 0, "pastas/penne-arrabbiata.jfif"],
+      ["Tiramisú", "Intermedio", 40, 4.5, 1, "esponjados/semifreddo-de-cafe.jfif"],
+    ],
+    more: [
+      ["Cupcakes de corazón", "Intermedio", 45, 4.5, 0, "esponjados/torta-red-velvet.jfif"],
+      ["Mousse de chocolate", "Fácil", 30, 4.5, 1, "esponjados/Semifreddo-de-chocolate.jfif"],
+      ["Camarones al ajillo", "Fácil", 20, 4, 0, "sanvalentin/camarones-al-ajillo.jpg"],
+      ["Ensalada de fresas", "Fácil", 15, 4, 0, "ensalada/ensalada-de-frutas.jpg"],
+      ["Panqueques de corazón", "Fácil", 20, 4, 1, "desayunos/pancakes.jpg"],
+      ["Fondue de chocolate", "Fácil", 20, 5, 1, "brownies.jpeg"],
+    ],
+  },
+
+  smoothies: {
+    label: "Batidos",
+    featured: [
+      ["Batido de fresa", "Fácil", 5, 4.5, 1, "desayunos/batido-vegano.jpg"],
+      ["Batido verde", "Fácil", 5, 4, 1, "batidos/batido-verde.jpg"],
+      ["Batido de mango", "Fácil", 5, 4.5, 0, "batidos/batido-de-mango.jpg"],
+      ["Batido de avena y banano", "Fácil", 5, 4, 0, "batidos/batido-de-avena-y-banano.jpg"],
+      ["Batido de piña y jengibre", "Fácil", 5, 4, 0, "batidos/batido-de-pina-y-jengibre.jpg"],
+      ["Batido de espinaca y manzana", "Fácil", 5, 4, 1, "batidos/batido-de-espinaca-y-manzana.jpg"],
+    ],
+    more: [
+      ["Batido proteico", "Fácil", 5, 4, 1, "batidos/batido-proteico.jpg"],
+      ["Batido de mora", "Fácil", 5, 4.5, 0, "desayunos/batido-vegano.jpg"],
+      ["Smoothie bowl", "Fácil", 10, 4.5, 1, "desayunos/pudin-de-chia.jpg"],
+      ["Batido de papaya", "Fácil", 5, 4, 0, "batidos/batido-de-papaya.jpg"],
+      ["Batido de chocolate y maní", "Fácil", 5, 4.5, 0, "batidos/batido-de-chocolate-y-mani.jpg"],
+      ["Batido tropical", "Fácil", 5, 4, 0, "batidos/batido-tropical.jpg"],
+    ],
+  },
+
+  milkshakes: {
+    label: "Malteadas",
+    featured: [
+      ["Malteada de vainilla", "Fácil", 5, 4.5, 1, "malteadas/malteada-de-vainilla.jpg"],
+      ["Malteada de chocolate", "Fácil", 5, 4.5, 1, "malteadas/malteada-de-chocolate.jpg"],
+      ["Malteada de oreo", "Fácil", 5, 5, 1, "malteadas/malteada-de-oreo.jpg"],
+      ["Malteada de fresa", "Fácil", 5, 4, 0, "malteadas/malteada-de-fresa.jpg"],
+      ["Malteada de caramelo", "Fácil", 5, 4.5, 0, "malteadas/malteada-de-caramelo.jpg"],
+      ["Malteada de galleta", "Fácil", 5, 4, 0, "malteadas/malteada-de-galleta.jpg"],
+    ],
+    more: [
+      ["Malteada de café", "Fácil", 5, 4, 0, "malteadas/malteada-de-cafe.jpg"],
+      ["Malteada de arequipe", "Fácil", 5, 4.5, 1, "malteadas/malteada-de-arequipe.jpg"],
+      ["Malteada de brownie", "Fácil", 10, 4.5, 0, "malteadas/malteada-de-brownie.jpg"],
+      ["Malteada de banano", "Fácil", 5, 4, 0, "malteadas/malteada-de-banano.jpg"],
+      ["Malteada de mantequilla de maní", "Fácil", 5, 4.5, 0, "malteadas/malteada-de-mantequilla-de-mani.jpg"],
+      ["Malteada de menta", "Fácil", 5, 4, 0, "malteadas/malteada-de-menta.jpg"],
+    ],
+  },
+
+  juices: {
+    label: "Jugos",
+    featured: [
+      ["Jugo de naranja", "Fácil", 5, 4, 1, "jugos/jugo-de-naranja.jpg"],
+      ["Limonada de coco", "Fácil", 10, 4.5, 1, "jugos/limonada-de-coco.jpg"],
+      ["Jugo de maracuyá", "Fácil", 5, 4.5, 0, "jugos/jugo-de-maracuya.jpg"],
+      ["Jugo verde detox", "Fácil", 10, 4, 1, "jugos/jugo-verde-detox.jpg"],
+      ["Jugo de mandarina", "Fácil", 5, 4, 0, "jugos/jugo-de-mandarina.jpg"],
+      ["Limonada de hierbabuena", "Fácil", 10, 4.5, 1, "jugos/limonada-de-hierbabuena.jpg"],
+    ],
+    more: [
+      ["Jugo de lulo", "Fácil", 5, 4.5, 1, "jugos/jugo-de-lulo.jpg"],
+      ["Jugo de piña y menta", "Fácil", 5, 4, 0, "jugos/jugo-de-pina-y-menta.jpg"],
+      ["Jugo de zanahoria", "Fácil", 5, 4, 0, "jugos/jugo-de-zanahoria.jpg"],
+      ["Jugo de guanábana", "Fácil", 5, 4.5, 0, "jugos/jugo-de-guanabana.jpg"],
+      ["Limonada cerezada", "Fácil", 10, 4.5, 1, "jugos/limonada-cerezada.jpg"],
+      ["Jugo de sandía", "Fácil", 5, 4, 0, "jugos/jugo-de-sandia.jpg"],
+    ],
+  },
+};

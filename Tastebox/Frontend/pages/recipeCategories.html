@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categorías de recetas | TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="page-categories">
+
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="icon-breakfast" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 20h24v8a10 10 0 0 1-10 10h-4a10 10 0 0 1-10-10z" fill="currentColor"/>
+          <path d="M34 22h3a4 4 0 0 1 0 8h-4"/>
+          <path d="M6 43h32"/>
+          <path d="M18 7c-2 3 2 4 0 7M26 7c-2 3 2 4 0 7"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-lunch" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 6v9a6 6 0 0 0 12 0V6M17 6v10M17 21v21"/>
+          <path d="M35 42V6c-5 3-7 9-7 16h7" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-snacks" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="21" cy="19" r="13" fill="currentColor"/>
+          <path d="M21 6a13 13 0 0 1 13 13M21 12a7 7 0 0 1 7 7" stroke="var(--tile)"/>
+          <path d="M30 28l12 13"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-dinner" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 14h30L23 31z" fill="currentColor"/>
+          <path d="M23 31v11M15 43h16"/>
+          <path d="M30 4L19 20"/>
+          <circle cx="32" cy="9" r="3.5" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-soups" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 24h38a19 19 0 0 1-19 17A19 19 0 0 1 5 24z" fill="currentColor"/>
+          <path d="M16 45h16"/>
+          <path d="M15 7c-2 3 2 5 0 8M24 7c-2 3 2 5 0 8M33 7c-2 3 2 5 0 8"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-salads" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 26h38a19 19 0 0 1-19 16A19 19 0 0 1 5 26z" fill="currentColor"/>
+          <path d="M12 24c-1-9 5-14 11-14 1 8-3 14-11 14z" fill="currentColor"/>
+          <path d="M26 24c0-7 4-11 10-11 0 7-3 11-10 11z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-fish" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="24" r="4.5" fill="currentColor"/>
+          <path d="M14 24h22"/>
+          <path d="M18 24l4-9M18 24l4 9M25 24l4-8M25 24l4 8M32 24l3-6M32 24l3 6"/>
+          <path d="M36 24l8-9v18z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-meats" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 22c2-9 13-14 23-9 9 4 11 14 4 20-6 5-15 4-22 0-6-3-7-6-5-11z" fill="currentColor"/>
+          <circle cx="27" cy="23" r="5" stroke="var(--tile)"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-pasta" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 26h38a19 19 0 0 1-19 16A19 19 0 0 1 5 26z" fill="currentColor"/>
+          <path d="M10 22c3-5 6 1 9-3s6 1 9-3 6 1 9-2"/>
+          <path d="M30 4l9 15M36 3l7 13"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-cakes" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 20h34v19H7z" fill="currentColor"/>
+          <path d="M7 29c4 3 6-2 10 1s6-3 10 0 6-2 10 1 4-1 4-1" stroke="var(--tile)"/>
+          <path d="M24 20v-5"/>
+          <circle cx="24" cy="11" r="3.5" fill="currentColor"/>
+          <path d="M4 43h40"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-baked" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="17" fill="currentColor"/>
+          <g fill="var(--tile)" stroke="none">
+            <circle cx="17" cy="18" r="2.6"/><circle cx="30" cy="16" r="2.2"/>
+            <circle cx="33" cy="28" r="2.6"/><circle cx="20" cy="31" r="2.4"/>
+            <circle cx="25" cy="24" r="1.8"/>
+          </g>
+        </g>
+      </symbol>
+
+      <symbol id="icon-healthy" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="5" width="38" height="38" rx="6" fill="currentColor"/>
+          <path d="M13 35c0-12 8-19 22-19 0 13-7 19-19 19" fill="var(--tile)" stroke="none"/>
+          <path d="M13 36l15-15" stroke="currentColor" stroke-width="2.2"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-christmas" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 4l9 12h-5l9 12h-8l7 10H11l7-10h-8l9-12h-5z" fill="currentColor"/>
+          <path d="M21 38h6v6h-6z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-new-year" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 12h11l-1.5 13a4 4 0 0 1-8 0z" fill="currentColor" transform="rotate(-12 12 24)"/>
+          <path d="M31 12h11l-1.5 13a4 4 0 0 1-8 0z" fill="currentColor" transform="rotate(12 36 24)"/>
+          <path d="M9 29l-4 12M39 29l4 12M3 43h8M37 43h8"/>
+          <path d="M24 4v6M20 7h8"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-halloween" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 13C11 8 3 18 5 29s10 14 19 12c9 2 17-1 19-12S37 8 24 13z" fill="currentColor"/>
+          <path d="M24 13c0-4 2-7 6-8"/>
+          <path d="M13 27l5-5 2 7zM35 27l-5-5-2 7z" fill="var(--tile)" stroke="none"/>
+          <path d="M15 34q9 6 18 0" stroke="var(--tile)"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-valentines" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M24 42C8 31 5 20 11 14c5-4 10-1 13 4 3-5 8-8 13-4 6 6 3 17-13 28z" fill="currentColor"/>
+          <path d="M5 43L43 5" stroke="var(--tile)" stroke-width="6"/>
+          <path d="M5 43L43 5"/>
+          <path d="M43 5h-9M43 5v9M5 43l0-8M5 43l8 0"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-smoothies" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 17h24l-3 26H15z" fill="currentColor"/>
+          <path d="M10 17h28"/>
+          <path d="M27 17l4-11h7"/>
+          <path d="M14 28h20" stroke="var(--tile)"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-milkshakes" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 24h22l-3 19H16z" fill="currentColor"/>
+          <path d="M11 24c-1-5 3-6 5-6 0-4 4-7 8-7s8 3 8 7c2 0 6 1 5 6z" fill="currentColor"/>
+          <path d="M31 12l6-9"/>
+          <circle cx="24" cy="6" r="2.5" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="icon-juices" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 16h24l-3 27H12z" fill="currentColor"/>
+          <path d="M11 27h20" stroke="var(--tile)"/>
+          <path d="M22 16l5-11h6"/>
+          <circle cx="37" cy="17" r="7" fill="currentColor"/>
+          <path d="M37 11v12M31 17h12" stroke="var(--tile)" stroke-width="2"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="header">
+    <a href="index.html" class="logo">tastebox</a>
+    <form class="search" role="search" id="search-form">
+      <input type="search" name="q" placeholder="Busca recetas, ingredientes y más" aria-label="Buscar">
+      <button type="submit">Búsqueda</button>
+    </form>
+    <a href="login.html" class="auth" id="auth-link">Iniciar sesión</a>
+        <nav class="nav">
+      <a href="recipeCategories.html">Recetas</a>
+      <a href="suscripcion.html">Suscripciones</a>
+      <a href="habitos.html">Mis hábitos</a>
+    </nav>
+  </header>
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+
+  <main>
+    <a href="index.html" class="home-link" aria-label="Ir al inicio">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 3L2 12h3v8h5v-6h4v6h5v-8h3z"/>
+      </svg>
+    </a>
+
+    <h1 class="categories-title">Recetas de tastebox</h1>
+    <p class="categories-subtitle">Elige una categoría y encuentra qué cocinar hoy.</p>
+
+    <section class="category-group" aria-labelledby="group-routine">
+      <h2 id="group-routine">Para acompañar tu rutina</h2>
+      <p class="category-group__text">Ideas para cada momento del día, del primer café a la cena.</p>
+      <ul class="category-grid">
+        <li><a class="category-tile" href="categoryRecipes.html?category=breakfast"><svg aria-hidden="true"><use href="#icon-breakfast"/></svg><span>Desayunos</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=lunch"><svg aria-hidden="true"><use href="#icon-lunch"/></svg><span>Almuerzos</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=snacks"><svg aria-hidden="true"><use href="#icon-snacks"/></svg><span>Snacks</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=dinner"><svg aria-hidden="true"><use href="#icon-dinner"/></svg><span>Cenas</span></a></li>
+      </ul>
+      <div class="category-photos" aria-hidden="true">
+        <img src="../img/desayunos/pancakes.jpg" alt="" loading="lazy">
+        <img src="../img/almuerzos/bandeja-paisa.jpg" alt="" loading="lazy">
+        <img src="../img/snacks/churros.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <section class="category-group" aria-labelledby="group-savory">
+      <h2 id="group-savory">Recetas saladas</h2>
+      <p class="category-group__text">Platos de sal para el almuerzo y la cena: sopas, carnes, pastas y más.</p>
+      <ul class="category-grid">
+        <li><a class="category-tile" href="categoryRecipes.html?category=soups"><svg aria-hidden="true"><use href="#icon-soups"/></svg><span>Sopas</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=salads"><svg aria-hidden="true"><use href="#icon-salads"/></svg><span>Ensaladas</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=fish"><svg aria-hidden="true"><use href="#icon-fish"/></svg><span>Pescados</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=meats"><svg aria-hidden="true"><use href="#icon-meats"/></svg><span>Carnes</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=pasta"><svg aria-hidden="true"><use href="#icon-pasta"/></svg><span>Pastas</span></a></li>
+      </ul>
+      <div class="category-photos" aria-hidden="true">
+        <img src="../img/carnes/costillitas-bbq.jfif" alt="" loading="lazy">
+        <img src="../img/pastas/espaguetis-a-la-bolognesa.jfif" alt="" loading="lazy">
+        <img src="../img/pescados/ceviche-de-camaron.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <section class="category-group" aria-labelledby="group-sweet">
+      <h2 id="group-sweet">Antojos dulces</h2>
+      <p class="category-group__text">Postres, panes y opciones livianas para quien quiere algo dulce.</p>
+      <ul class="category-grid">
+        <li><a class="category-tile" href="categoryRecipes.html?category=cakes"><svg aria-hidden="true"><use href="#icon-cakes"/></svg><span>Esponjados</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=baked"><svg aria-hidden="true"><use href="#icon-baked"/></svg><span>Horneados</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=healthy"><svg aria-hidden="true"><use href="#icon-healthy"/></svg><span>Dietéticos</span></a></li>
+      </ul>
+      <div class="category-photos" aria-hidden="true">
+        <img src="../img/esponjados/Cheesecake-de-fresa.jpg" alt="" loading="lazy">
+        <img src="../img/horneados/muffins-de-arandanos.jpg" alt="" loading="lazy">
+        <img src="../img/dietetico/bowl-yogurt-con-frutas.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <section class="category-group" aria-labelledby="group-festive">
+      <h2 id="group-festive">Recetas para festividades</h2>
+      <p class="category-group__text">Recetas para celebrar Navidad, Año nuevo, Halloween y San Valentín.</p>
+      <ul class="category-grid">
+        <li><a class="category-tile" href="categoryRecipes.html?category=christmas"><svg aria-hidden="true"><use href="#icon-christmas"/></svg><span>Navidad</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=new-year"><svg aria-hidden="true"><use href="#icon-new-year"/></svg><span>Año nuevo</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=halloween"><svg aria-hidden="true"><use href="#icon-halloween"/></svg><span>Halloween</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=valentines"><svg aria-hidden="true"><use href="#icon-valentines"/></svg><span>San valentín</span></a></li>
+      </ul>
+      <div class="category-photos" aria-hidden="true">
+        <img src="../img/navidad/natilla.jpg" alt="" loading="lazy">
+        <img src="../img/halloween/manzanas-acarameladas.jpg" alt="" loading="lazy">
+        <img src="../img/sanvalentin/camarones-al-ajillo.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+
+    <section class="category-group" aria-labelledby="group-drinks">
+      <h2 id="group-drinks">Bebidas</h2>
+      <p class="category-group__text">Batidos, malteadas y jugos para refrescarte.</p>
+      <ul class="category-grid">
+        <li><a class="category-tile" href="categoryRecipes.html?category=smoothies"><svg aria-hidden="true"><use href="#icon-smoothies"/></svg><span>Batidos</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=milkshakes"><svg aria-hidden="true"><use href="#icon-milkshakes"/></svg><span>Malteadas</span></a></li>
+        <li><a class="category-tile" href="categoryRecipes.html?category=juices"><svg aria-hidden="true"><use href="#icon-juices"/></svg><span>Jugos</span></a></li>
+      </ul>
+      <div class="category-photos" aria-hidden="true">
+        <img src="../img/batidos/batido-de-mango.jpg" alt="" loading="lazy">
+        <img src="../img/malteadas/malteada-de-fresa.jpg" alt="" loading="lazy">
+        <img src="../img/jugos/jugo-de-naranja.jpg" alt="" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/categories.js"></script>
+</body>
+</html>

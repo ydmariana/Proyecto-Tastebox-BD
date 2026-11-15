@@ -1,0 +1,21 @@
+{
+  "name": "tastebox-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "test:real": "node --test tests/real-api.recipe.review.test.js",
+    "migrate-passwords": "node scripts/migrate-passwords.js",
+    "seed-recipes": "node scripts/seed-recipes.js",
+    "create-admin": "node scripts/create-admin.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.5"
+  }
+}

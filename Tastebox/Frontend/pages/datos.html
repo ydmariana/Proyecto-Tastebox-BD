@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datos personales | TasteBox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Lora:ital,wght@1,600;1,700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo">tastebox</a>
+    <form class="search" role="search" id="search-form">
+      <input type="search" name="q" placeholder="Busca recetas, ingredientes y más" aria-label="Buscar">
+      <button type="submit">Búsqueda</button>
+    </form>
+
+    <a href="login.html" class="auth" id="auth-link">Iniciar sesión</a>
+        <nav class="nav">
+      <a href="recipeCategories.html">Recetas</a>
+      <a href="suscripcion.html">Suscripciones</a>
+      <a href="habitos.html">Mis hábitos</a>
+    </nav>
+  </header>
+  <script src="../js/config.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/loading.js"></script>
+  <script src="../js/sesion.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/notice.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/plans.js"></script>
+  <script src="../js/recipeCatalog.js"></script>
+  <script src="../js/savedRecipes.js"></script>
+
+  <main>
+    <nav class="crumbs" aria-label="Ruta">
+      <a href="index.html" aria-label="Inicio"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 12h3v8h5v-6h4v6h5v-8h3z"/></svg></a>
+      <span aria-hidden="true">›</span>
+      <a href="perfil.html">Perfil</a>
+    </nav>
+
+    <div class="profile-page">
+      <div id="side-slot" data-current="datos"></div>
+      <div class="profile-main">
+        <h1 class="profile-title">Datos personales</h1>
+
+        <form class="dp" id="dp-form" novalidate>
+          <div class="dp-hero">
+            <div class="dp-avatar" id="dp-avatar" aria-hidden="true"></div>
+            <button type="button" class="dp-avatar__edit" id="dp-avatar-btn" aria-label="Cambiar foto de perfil">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 20 1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/></svg>
+            </button>
+            <input type="file" id="dp-file" accept="image/*" hidden>
+            <p class="dp-hero__name" id="dp-hero-name">Usuario</p>
+          </div>
+
+          <h2 class="dp-h2">Información de tu cuenta</h2>
+          <div class="dp-field"><label for="dp-username">Nombre de usuario:</label><input id="dp-username" name="username" maxlength="30" autocomplete="username"><small class="dp-error" id="dp-username-error"></small></div>
+          <div class="dp-field"><label for="dp-email">Correo electrónico:</label><input id="dp-email" name="email" type="email" maxlength="80" autocomplete="email"><small class="dp-error" id="dp-email-error"></small></div>
+          <div class="dp-field"><label for="dp-pass">Contraseña:</label><div class="dp-pass"><input id="dp-pass" type="password" value="••••••••" readonly class="is-readonly"><button type="button" class="dp-pass__btn" id="dp-pass-btn" aria-haspopup="dialog">Cambiar</button></div></div>
+          <div class="dp-field"><label for="dp-plan">Plan actual:</label><input id="dp-plan" readonly class="is-readonly"></div>
+
+          <h2 class="dp-h2">Información de envío</h2>
+          <div class="dp-field"><label for="dp-full-name">Nombre completo:</label><input id="dp-full-name" name="fullName" maxlength="60" autocomplete="name"></div>
+          <div class="dp-field"><label for="dp-address">Dirección:</label><input id="dp-address" name="address" maxlength="100" autocomplete="street-address"></div>
+          <div class="dp-field"><label for="dp-phone">Teléfono de contacto:</label><input id="dp-phone" name="phone" type="tel" maxlength="20" autocomplete="tel"><small class="dp-error" id="dp-phone-error"></small></div>
+
+          <button type="submit" class="dp-save">Guardar Cambios</button>
+          <p class="dp-status" id="dp-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="logo">tastebox</span>
+      <small>© 2026 TasteBox</small>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Explorar</h4>
+        <a href="index.html">Inicio</a>
+        <a href="recipeCategories.html">Recetas</a>
+        <a href="suscripcion.html">Suscripciones</a>
+      </div>
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="registro.html">Registrarse</a>
+        <a href="login.html">Iniciar Sesión</a>
+      </div>
+      <div>
+        <h4>Contáctanos</h4>
+        <a href="tel:+573024708526">+ 57 302 4708526</a>
+        <a href="tel:018000111000">01 8000 111 000</a>
+        <a href="mailto:tastebox@gmail.com">tastebox@gmail.com</a>
+      </div>
+      <div class="social">
+        <h4>Síguenos</h4>
+        <div>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="modal modal--ok modal--form" id="pw-dialog" aria-labelledby="pw-title">
+    <h2 class="modal__title" id="pw-title">Cambiar contraseña</h2>
+    <form id="pw-form" novalidate>
+      <div class="field">
+        <label for="pw-current">Contraseña actual</label>
+        <input type="password" id="pw-current" autocomplete="current-password" required>
+        <p class="field__error" id="pw-current-error"></p>
+      </div>
+      <div class="field">
+        <label for="pw-new">Nueva contraseña</label>
+        <input type="password" id="pw-new" autocomplete="new-password" aria-describedby="pw-new-hint" required>
+        <p class="field__hint" id="pw-new-hint">Usa 8 o más caracteres con letras, números y símbolos</p>
+      </div>
+      <div class="field">
+        <label for="pw-confirm">Confirmar nueva contraseña</label>
+        <input type="password" id="pw-confirm" autocomplete="new-password" required>
+        <p class="field__error" id="pw-confirm-error"></p>
+      </div>
+      <div class="modal__actions">
+        <button type="submit" class="modal__btn">Guardar</button>
+        <button type="button" class="modal__btn modal__btn--ghost" id="pw-cancel">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="../js/sideMenu.js"></script>
+  <script src="../js/colecciones.js"></script>
+  <script src="../js/passwordReset.js"></script>
+  <script src="../js/datos.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

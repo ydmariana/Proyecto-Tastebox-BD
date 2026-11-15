@@ -61,7 +61,7 @@ Tastebox/
 
 ```bash
 git clone <URL-DEL-REPOSITORIO>
-cd Tasteboxcasito
+cd Tastebox
 ```
 
 ### 2. Crear la base de datos

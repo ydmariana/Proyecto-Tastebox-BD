@@ -12,7 +12,7 @@ Proyecto del **Caso 6 — TasteBox** · Universidad de San Buenaventura, Sede Bo
 
 - **Catálogo de recetas** (256 recetas) organizado por categorías: desayunos, almuerzos, sopas, pastas, carnes, pescados, postres, malteadas, etc. Con búsqueda y recetas destacadas, y sin necesidad de iniciar sesión.
 - **Registro e inicio de sesión** con contraseñas protegidas con `scrypt`.
-- **Planes de suscripción:** gratuito (límite mensual de recetas) y premium (sin límite), con fecha de inicio, renovación y vencimiento.
+- **Planes de suscripción:** gratuito (límite mensual de recetas) y premium (sin límite y caja de ingredientes), con fecha de inicio, renovación y vencimiento.
 - **Colecciones personales** y recetas guardadas, separadas del catálogo general.
 - **Reseñas:** calificación de 1 a 5 (más comentario, etiquetas y "volvería a cocinarla").
 - **Perfil de usuario:** datos personales, cambio de contraseña, foto, mis hábitos y mis reseñas.

@@ -109,3 +109,12 @@ Sirve la carpeta `Frontend/` con cualquier servidor estático, por ejemplo la ex
 
 Si la API corre en otra dirección, define `window.TASTEBOX_API_URL` antes de cargar `js/config.js`.
 
+## Scripts del backend
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm start` | Inicia la API |
+| `npm test` | Ejecuta las pruebas |
+| `npm run seed-recipes` | Carga el catálogo de recetas (acepta `--dry-run`) |
+| `npm run create-admin -- correo contraseña` | Crea un administrador, o promueve a uno existente (sin cambiar su contraseña) |
+| `npm run migrate-passwords` | Migra contraseñas en texto plano a `scrypt` (acepta `--dry-run`) |
